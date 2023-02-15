@@ -1,0 +1,16 @@
+{
+  "iisSettings": {
+    "windowsAuthentication": false,
+    "anonymousAuthentication": true,
+    "iisExpress": {
+      "applicationUrl": "http://localhost:55831/",
+      "sslPort": 44380
+    }
+  },
+  "profiles": {
+    "JobSearch.App": {
+      "commandName": "IISExpress",
+      "sqlDebugging": true
+    }
+  }
+}
