@@ -58,7 +58,7 @@ namespace AppJobSearch.API.Controllers
         }
 
 
-        //[HttpPost]
+        [HttpPost]
         public IActionResult AddJob(Job job)
         {
 

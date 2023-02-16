@@ -11,32 +11,41 @@ namespace JobSearch.Domain.Models
         [Key]
         public int Id { get; set; }
 
-        [Required]
+        [Display(Name = "Company", ResourceType = typeof(JobSearch.Domain.Utility.Language.Fields))]
+        [Required(ErrorMessageResourceType = typeof(JobSearch.Domain.Utility.Language.Message), ErrorMessageResourceName = "MSG_E001")]
         public string Company { get; set; }
 
-        [Required]
+        [Display(Name = "JobTile", ResourceType = typeof(JobSearch.Domain.Utility.Language.Fields))]
+        [Required(ErrorMessageResourceType = typeof(JobSearch.Domain.Utility.Language.Message), ErrorMessageResourceName = "MSG_E001")]
         public string JobTitle { get; set; }
-
-        [Required]
+        
+        [Display(Name = "CityStare", ResourceType = typeof(JobSearch.Domain.Utility.Language.Fields))]
+        [Required(ErrorMessageResourceType = typeof(JobSearch.Domain.Utility.Language.Message), ErrorMessageResourceName = "MSG_E001")]
         public string CityStare { get; set; }
 
-        [Required]
+        [Display(Name = "Salary", ResourceType = typeof(JobSearch.Domain.Utility.Language.Fields))]
+        [Required(ErrorMessageResourceType = typeof(JobSearch.Domain.Utility.Language.Message), ErrorMessageResourceName = "MSG_E001")]
         public double Salary { get; set; }
 
-        [Required]
+        [Display(Name = "ContractType", ResourceType = typeof(JobSearch.Domain.Utility.Language.Fields))]
+        [Required(ErrorMessageResourceType = typeof(JobSearch.Domain.Utility.Language.Message), ErrorMessageResourceName = "MSG_E001")]
         public string ContractType { get; set; }
 
-        [Required]
+        [Display(Name = "TecnologyTools", ResourceType = typeof(JobSearch.Domain.Utility.Language.Fields))]
+        [Required(ErrorMessageResourceType = typeof(JobSearch.Domain.Utility.Language.Message), ErrorMessageResourceName = "MSG_E001")]
         public string TecnologyTools { get; set; }
-        
+
+        [Display(Name = "CompanyDescription", ResourceType = typeof(JobSearch.Domain.Utility.Language.Fields))]
         public string CompanyDescription { get; set; }
 
-        [Required]
+        [Display(Name = "JobDescription", ResourceType = typeof(JobSearch.Domain.Utility.Language.Fields))]
+        [Required(ErrorMessageResourceType = typeof(JobSearch.Domain.Utility.Language.Message), ErrorMessageResourceName = "MSG_E001")]
         public string JobDescription { get; set; }
         public string Benefits { get; set; }
 
-        [Required]
-        [EmailAddress]
+        [Display(Name = "InterestedSendEmailTo", ResourceType = typeof(JobSearch.Domain.Utility.Language.Fields))]
+        [Required(ErrorMessageResourceType = typeof(JobSearch.Domain.Utility.Language.Message), ErrorMessageResourceName = "MSG_E001")]
+        [EmailAddress(ErrorMessageResourceType = typeof(JobSearch.Domain.Utility.Language.Message), ErrorMessageResourceName = "MSG_E002")]
         public string InterestedSendEmailTo { get; set; }
         
         public DateTime PublicationDate { get; set; }
