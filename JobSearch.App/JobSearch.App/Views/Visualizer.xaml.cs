@@ -10,21 +10,16 @@ using Xamarin.Forms.Xaml;
 namespace JobSearch.App.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class Login : ContentPage
+    public partial class Visualizer : ContentPage
     {
-        public Login()
+        public Visualizer()
         {
             InitializeComponent();
         }
 
-        private void GoRegister(object sender, EventArgs e)
+        private void Goback(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new Register());
-        }
-
-        private void GoStart(object sender, EventArgs e)
-        {
-            App.Current.MainPage = new NavigationPage(new Start());
+            Navigation.PopAsync();
         }
     }
 }
