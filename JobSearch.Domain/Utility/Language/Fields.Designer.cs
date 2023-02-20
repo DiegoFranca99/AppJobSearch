@@ -72,9 +72,9 @@ namespace JobSearch.Domain.Utility.Language {
         /// <summary>
         ///   Looks up a localized string similar to Cidade/UF.
         /// </summary>
-        public static string CityStare {
+        public static string CityState {
             get {
-                return ResourceManager.GetString("CityStare", resourceCulture);
+                return ResourceManager.GetString("CityState", resourceCulture);
             }
         }
         
@@ -111,6 +111,24 @@ namespace JobSearch.Domain.Utility.Language {
         public static string Email {
             get {
                 return ResourceManager.GetString("Email", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Salario Final.
+        /// </summary>
+        public static string FinalSalary {
+            get {
+                return ResourceManager.GetString("FinalSalary", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Salario Inicial.
+        /// </summary>
+        public static string InitalSalary {
+            get {
+                return ResourceManager.GetString("InitalSalary", resourceCulture);
             }
         }
         
@@ -165,15 +183,6 @@ namespace JobSearch.Domain.Utility.Language {
         public static string PublicationDate {
             get {
                 return ResourceManager.GetString("PublicationDate", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Salario.
-        /// </summary>
-        public static string Salary {
-            get {
-                return ResourceManager.GetString("Salary", resourceCulture);
             }
         }
         

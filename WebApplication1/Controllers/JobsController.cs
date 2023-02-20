@@ -24,45 +24,59 @@ namespace AppJobSearch.API.Controllers
         [HttpGet]
         public IEnumerable<Job> GetJobs(string word, string cityState, int numberOfPage = 1)
         {
-
             if (word == null)
                 word = "";
+
             if (cityState == null)
-                cityState = "";                        
+                cityState = "";
+
+            var totalItems = _data.Jobs
+                .Where(a =>
+                    a.PublicationDate >= DateTime.Now.AddDays(-15) &&
+                    a.CityState.ToLower().Contains(cityState.ToLower()) &&
+                    (
+                        a.JobTitle.ToLower().Contains(word.ToLower()) ||
+                        a.TecnologyTools.ToLower().Contains(word.ToLower()) ||
+                        a.Company.ToLower().Contains(word.ToLower())
+                    )
+                ).Count();
+
+            Response.Headers.Add("X-Total-Items", totalItems.ToString());
 
             return _data.Jobs
                 .Where(a =>
-                    a.PublicationDate > DateTime.Now.AddDays(-15) &&
-                    a.CityStare.ToLower().Contains(cityState.ToLower()) &&
+                    a.PublicationDate >= DateTime.Now.AddDays(-15) &&
+                    a.CityState.ToLower().Contains(cityState.ToLower()) &&
                     (
                         a.JobTitle.ToLower().Contains(word.ToLower()) ||
                         a.TecnologyTools.ToLower().Contains(word.ToLower()) ||
                         a.Company.ToLower().Contains(word.ToLower())
                     )
                 )
-                .Skip(numberOfRegistryByPage * (numberOfPage-1))
+                .Skip(numberOfRegistryByPage * (numberOfPage - 1))
                 .Take(numberOfRegistryByPage)
                 .ToList<Job>();
+
         }
 
+
+        //api/Jobs/1
         [HttpGet("{id}")]
         public IActionResult GetJob(int id)
         {
             Job jobDb = _data.Jobs.Find(id);
 
-            if(jobDb == null)
+            if (jobDb == null)
             {
                 return NotFound();
             }
+
             return new JsonResult(jobDb);
         }
 
-
-        [HttpPost]
         public IActionResult AddJob(Job job)
         {
-
-            //VALIDAÇÃO
+            //TODO - Add Validação.
             job.PublicationDate = DateTime.Now;
             _data.Jobs.Add(job);
             _data.SaveChanges();

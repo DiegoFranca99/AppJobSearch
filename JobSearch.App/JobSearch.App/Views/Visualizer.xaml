@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:control="clr-namespace:JobSearch.App.Utility.Controls"
              x:Class="JobSearch.App.Views.Visualizer">
     <ContentPage.Content>
         <StackLayout>
@@ -19,7 +20,7 @@
             <BoxView Color="#D7CCFF" HeightRequest="1"/>
             <ScrollView>
                 <StackLayout>
-                    <Grid RowSpacing="0">
+                    <Grid >
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="3*"/>
                             <ColumnDefinition Width="2*"/>
@@ -30,27 +31,27 @@
                             <RowDefinition/>
                             <RowDefinition/>
                             <RowDefinition/>
-                            <RowDefinition/>
                         </Grid.RowDefinitions>
-                        <Label Text="Digital Ocean" Style="{StaticResource TextSecundary}"/>
-                        <Label Text="Back - End Developer" Style="{StaticResource TextPrimary}" Grid.Row="1"/>
-                        <Label Text="São Paulo, SP" Style="{StaticResource TextSecundary}" Grid.Row="2" Grid.ColumnSpan="2"/>
+                        <Label Text="{Binding Company}" Style="{StaticResource TextSecundary}"/>
+                        <Label Text="{Binding JobTitle}" Style="{StaticResource TextPrimary}" Grid.Row="1"/>
+                        <Label Text="{Binding CityStare}" Style="{StaticResource TextSecundary}" Grid.Row="2" Grid.ColumnSpan="2"/>
                         <Label Grid.Row="3" Grid.ColumnSpan="2">
                             <Label.FormattedText>
                                 <FormattedString>
-                                    <Span Text="7-11K" Style="{StaticResource MoneyLabel}"/>
+                                    <Span Text="{Binding InitalSalary}" Style="{StaticResource MoneyLabel}"/>
+                                    <Span Text="-" Style="{StaticResource MoneyLabel}"/>
+                                    <Span Text="{Binding FinalSalary}" Style="{StaticResource MoneyLabel}"/>
                                     <Span Text=" BRL" Style="{StaticResource CurrencyLabel}"/>
                                 </FormattedString>
                             </Label.FormattedText>
                         </Label>
-                        <Label Text="CLT" Style="{StaticResource TextPrimary}" Grid.Row="4" Grid.ColumnSpan="2"/>
-                        <Label Text="Tags" Grid.Row="5" Grid.ColumnSpan="2"/>
+                        <Label Text="{Binding ContractType}" Style="{StaticResource TextPrimary}" Grid.Row="4" Grid.ColumnSpan="2"/>
 
                         <Label Grid.Column="1" HorizontalTextAlignment="End" Style="{StaticResource TextPrimary}">
                             <Label.FormattedText>
                                 <FormattedString>
                                     <Span Text="Pub. "/>
-                                    <Span Text="02/02/2022"/>
+                                    <Span Text="{Binding PublicationDate, StringFormat='{0:dd/MM/yyyy}'}"/>
                                 </FormattedString>
                             </Label.FormattedText>
                         </Label>
@@ -58,22 +59,22 @@
                             <Label.FormattedText>
                                 <FormattedString>
                                     <Span Text="id. "/>
-                                    <Span Text="23145"/>
+                                    <Span Text="{Binding Id}"/>
                                 </FormattedString>
                             </Label.FormattedText>
                         </Label>
                     </Grid>
+                    <control:TagView Techonologies="{Binding TecnologyTools}" />
 
                     <Label Style="{StaticResource TextPrimary}" Text="Email interessados" />
-                    <Label Style="{StaticResource TextSecundary}" Text="email@email.com" />
+                    <Label Style="{StaticResource TextSecundary}" Text="{Binding InterestedSendEmailTo}" />
                     <BoxView Color="#F3F5F7" HeightRequest="1"/>
-
-                    <Label Style="{StaticResource TitlePrimary}" Text="Descrição da empresa"/>
-                    <Label Style="{StaticResource TextPrimary}" Text="A empresa é assim e assado A empresa é assim e assado A empresa é assim e assado A empresa é assim e assado" />
-                    <Label Style="{StaticResource TitlePrimary}" Text="Descrição do trabalho"/>
-                    <Label Style="{StaticResource TextPrimary}" Text="Implementar novas tecnologias de gerenciamente Implementar novas tecnologias de gerenciamente Implementar novas tecnologias de gerenciamente Implementar novas tecnologias de gerenciamente Implementar novas tecnologias de gerenciamente Implementar novas tecnologias de gerenciamente Implementar novas tecnologias de gerenciamente Implementar novas tecnologias de gerenciamente Implementar novas tecnologias de gerenciamente Implementar novas tecnologias de gerenciamente Implementar novas tecnologias de gerenciamente Implementar novas tecnologias de gerenciamente Implementar novas tecnologias de gerenciamente Implementar novas tecnologias de gerenciamente Implementar novas tecnologias de gerenciamente Implementar novas tecnologias de gerenciamente Implementar novas tecnologias de gerenciamente Implementar novas tecnologias de gerenciamenteImplementar novas tecnologias de gerenciamente Implementar novas tecnologias de gerenciamente Implementar novas tecnologias de gerenciamenteImplementar novas tecnologias de gerenciamente Implementar novas tecnologias de gerenciamente Implementar novas tecnologias de gerenciamenteImplementar novas tecnologias de gerenciamente Implementar novas tecnologias de gerenciamente Implementar novas tecnologias de gerenciamenteImplementar novas tecnologias de gerenciamente Implementar novas tecnologias de gerenciamente Implementar novas tecnologias de gerenciamenteImplementar novas tecnologias de gerenciamente Implementar novas tecnologias de gerenciamente Implementar novas tecnologias de gerenciamenteImplementar novas tecnologias de gerenciamente Implementar novas tecnologias de gerenciamente Implementar novas tecnologias de gerenciamenteImplementar novas tecnologias de gerenciamente Implementar novas tecnologias de gerenciamente Implementar novas tecnologias de gerenciamenteImplementar novas tecnologias de gerenciamente Implementar novas tecnologias de gerenciamente Implementar novas tecnologias de gerenciamenteImplementar novas tecnologias de gerenciamente Implementar novas tecnologias de gerenciamente Implementar novas tecnologias de gerenciamenteImplementar novas tecnologias de gerenciamente Implementar novas tecnologias de gerenciamente Implementar novas tecnologias de gerenciamente" />
-                    <Label Style="{StaticResource TitlePrimary}" Text="Benefícios"/>
-                    <Label Style="{StaticResource TextPrimary}" Text="Vale transporte"/>
+                    <Label Style="{StaticResource TitlePrimary}" Text="Descrição da empresa" x:Name="HeaderCompanyDescription"/>
+                    <Label Style="{StaticResource TextPrimary}" Text="{Binding CompanyDescription}" x:Name="TextCompanyDescription"/>
+                    <Label Style="{StaticResource TitlePrimary}" Text="Descrição do trabalho" x:Name="HeaderJobDescription"/>
+                    <Label Style="{StaticResource TextPrimary}" Text="{Binding JobDescription}" x:Name="TextJobDescription"/>
+                    <Label Style="{StaticResource TitlePrimary}" Text="Benefícios" x:Name="HeaderBenefits"/>
+                    <Label Style="{StaticResource TextPrimary}" Text="{Binding Benefits}" x:Name="TextBenefits"/>
 
                 </StackLayout>
             </ScrollView>

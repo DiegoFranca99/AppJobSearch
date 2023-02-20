@@ -120,7 +120,7 @@
   <data name="Benefits" xml:space="preserve">
     <value>Benefícios</value>
   </data>
-  <data name="CityStare" xml:space="preserve">
+  <data name="CityState" xml:space="preserve">
     <value>Cidade/UF</value>
   </data>
   <data name="Company" xml:space="preserve">
@@ -134,6 +134,12 @@
   </data>
   <data name="Email" xml:space="preserve">
     <value>E-mail</value>
+  </data>
+  <data name="FinalSalary" xml:space="preserve">
+    <value>Salario Final</value>
+  </data>
+  <data name="InitalSalary" xml:space="preserve">
+    <value>Salario Inicial</value>
   </data>
   <data name="InterestedSendEmailTInterestedSendEmailTo" xml:space="preserve">
     <value>Interessado enviar e-mail para</value>
@@ -152,9 +158,6 @@
   </data>
   <data name="PublicationDate" xml:space="preserve">
     <value>Data de publicação</value>
-  </data>
-  <data name="Salary" xml:space="preserve">
-    <value>Salario</value>
   </data>
   <data name="TecnologyTools" xml:space="preserve">
     <value>Tecnologia</value>
