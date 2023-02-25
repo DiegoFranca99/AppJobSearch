@@ -9,12 +9,10 @@ namespace JobSearch.App.Database
 {
     public class JobSearchContext : DbContext
     {
-
         public JobSearchContext(DbContextOptions<JobSearchContext> options) : base(options)
         {
 
         }
-
         public DbSet<User> Users { get; set; }
         public DbSet<Job> Jobs { get; set; }
     }

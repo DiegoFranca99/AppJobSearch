@@ -47,7 +47,7 @@ namespace JobSearch.App.Views
                 Company = TxtCompany.Text,
                 JobTitle = TxtJobTitle.Text,
                 CityState = TxtCityState.Text,
-                InitalSalary = TextToDouble.ToDouble(TxtInicialSalary.Text),
+                InitialSalary = TextToDouble.ToDouble(TxtInicialSalary.Text),
                 FinalSalary = TextToDouble.ToDouble(TxtFinalSalary.Text),
                 ContractType = RBCLT.IsChecked ? "CLT" : "PJ",
                 TecnologyTools = TxtTecnologyTools.Text,

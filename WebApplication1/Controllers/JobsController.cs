@@ -58,8 +58,8 @@ namespace AppJobSearch.API.Controllers
                 .ToList<Job>();
 
         }
-
-
+        
+        
         //api/Jobs/1
         [HttpGet("{id}")]
         public IActionResult GetJob(int id)
@@ -74,6 +74,8 @@ namespace AppJobSearch.API.Controllers
             return new JsonResult(jobDb);
         }
 
+
+        [HttpPost]
         public IActionResult AddJob(Job job)
         {
             //TODO - Add Validação.

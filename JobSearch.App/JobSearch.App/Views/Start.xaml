@@ -78,7 +78,7 @@
 
                                         <Label Text="{Binding Company}" MaxLines="1" LineBreakMode="TailTruncation" Grid.ColumnSpan="2" Style="{StaticResource TextSecundary}"/>
                                         <Label Text="{Binding JobTitle}" MaxLines="1" LineBreakMode="TailTruncation" Grid.Row="1" Style="{StaticResource TextPrimary}"/>
-                                        <Label Text="{Binding CityStare}" MaxLines="1" LineBreakMode="TailTruncation" Grid.Row="2" Style="{StaticResource TextSecundary}"/>
+                                        <Label Text="{Binding CityState}" MaxLines="1" LineBreakMode="TailTruncation" Grid.Row="2" Style="{StaticResource TextSecundary}"/>
                                         <control:TagView Techonologies="{Binding TecnologyTools}" NumberOfWords="2"  Grid.Row="3"/>
 
                                         <Label Grid.Column="1" Grid.Row="1" HorizontalOptions="End" HorizontalTextAlignment="End">

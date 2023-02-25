@@ -6,11 +6,11 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
-namespace JobSearch.App.Migrations
+namespace JobSearch.API.Migrations
 {
     [DbContext(typeof(JobSearchContext))]
-    [Migration("20230219022403_alterJobTitleDisplay")]
-    partial class alterJobTitleDisplay
+    [Migration("20200608135931_BancoInicial")]
+    partial class BancoInicial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -27,7 +27,7 @@ namespace JobSearch.App.Migrations
                     b.Property<string>("Benefits")
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("CityStare")
+                    b.Property<string>("CityState")
                         .IsRequired()
                         .HasColumnType("TEXT");
 
@@ -41,12 +41,6 @@ namespace JobSearch.App.Migrations
                     b.Property<string>("ContractType")
                         .IsRequired()
                         .HasColumnType("TEXT");
-
-                    b.Property<double>("FinalSalary")
-                        .HasColumnType("REAL");
-
-                    b.Property<double>("InitalSalary")
-                        .HasColumnType("REAL");
 
                     b.Property<string>("InterestedSendEmailTo")
                         .IsRequired()
@@ -62,6 +56,9 @@ namespace JobSearch.App.Migrations
 
                     b.Property<DateTime>("PublicationDate")
                         .HasColumnType("TEXT");
+
+                    b.Property<double>("Salary")
+                        .HasColumnType("REAL");
 
                     b.Property<string>("TecnologyTools")
                         .IsRequired()

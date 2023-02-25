@@ -1,7 +1,7 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace JobSearch.App.Migrations
+namespace JobSearch.API.Migrations
 {
     public partial class BancoInicial : Migration
     {
@@ -30,8 +30,9 @@ namespace JobSearch.App.Migrations
                         .Annotation("Sqlite:Autoincrement", true),
                     Company = table.Column<string>(nullable: false),
                     JobTitle = table.Column<string>(nullable: false),
-                    CityStare = table.Column<string>(nullable: false),
-                    Salary = table.Column<double>(nullable: false),
+                    CityState = table.Column<string>(nullable: false),
+                    InitialSalary = table.Column<double>(nullable: false),
+                    FinalSalary = table.Column<double>(nullable: false),
                     ContractType = table.Column<string>(nullable: false),
                     TecnologyTools = table.Column<string>(nullable: false),
                     CompanyDescription = table.Column<string>(nullable: true),

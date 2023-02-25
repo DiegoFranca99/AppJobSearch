@@ -10,7 +10,7 @@
   "profiles": {
     "JobSearch.App": {
       "commandName": "IISExpress",
-      "sqlDebugging": true
+      "sqlDebugging": false
     }
   }
 }

@@ -42,8 +42,8 @@ namespace JobSearch.Domain.Models
         [Display(Name = "CompanyDescription", ResourceType = typeof(JobSearch.Domain.Utility.Language.Fields))]
         public string CompanyDescription { get; set; }
 
-        [Display(Name = "JobDescription", ResourceType = typeof(JobSearch.Domain.Utility.Language.Fields))]
-        [Required(ErrorMessageResourceType = typeof(JobSearch.Domain.Utility.Language.Messages), ErrorMessageResourceName = "MSG_E001")]
+        //[Display(Name = "JobDescription", ResourceType = typeof(JobSearch.Domain.Utility.Language.Fields))]
+        //[Required(ErrorMessageResourceType = typeof(JobSearch.Domain.Utility.Language.Messages), ErrorMessageResourceName = "MSG_E001")]
         public string JobDescription { get; set; }
 
         [Display(Name = "Benefits", ResourceType = typeof(JobSearch.Domain.Utility.Language.Fields))]

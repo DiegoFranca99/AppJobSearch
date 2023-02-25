@@ -34,7 +34,7 @@
                         </Grid.RowDefinitions>
                         <Label Text="{Binding Company}" Style="{StaticResource TextSecundary}"/>
                         <Label Text="{Binding JobTitle}" Style="{StaticResource TextPrimary}" Grid.Row="1"/>
-                        <Label Text="{Binding CityStare}" Style="{StaticResource TextSecundary}" Grid.Row="2" Grid.ColumnSpan="2"/>
+                        <Label Text="{Binding CityState}" Style="{StaticResource TextSecundary}" Grid.Row="2" Grid.ColumnSpan="2"/>
                         <Label Grid.Row="3" Grid.ColumnSpan="2">
                             <Label.FormattedText>
                                 <FormattedString>
